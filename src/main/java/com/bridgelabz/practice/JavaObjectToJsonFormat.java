@@ -1,5 +1,6 @@
 package com.bridgelabz.practice;
 
+import com.google.gson.Gson;
 import org.json.JSONObject;
 
 class Car{
@@ -13,12 +14,20 @@ class Car{
 }
 public class JavaObjectToJsonFormat {
     public static void main(String[] args) {
-        Car car=new Car("Venue","White");
-        JSONObject carJson=new JSONObject();
-        carJson.put("type",car.type);
-        carJson.put("color",car.color);
+        //MANUALLY CONVERTING
+//        Car car=new Car("Venue","White");
+//        JSONObject carJson=new JSONObject();
+//        carJson.put("type",car.type);
+//        carJson.put("color",car.color);
+//
+//        System.out.println(carJson.toString(4));
 
-        System.out.println(carJson.toString(4));
+        //AUTOMATIC CONVERSION
+        Car car=new Car("XUV","Grey");
+        Gson carGson=new Gson();
+        String json=carGson.toJson(car);
+
+        System.out.println(json);
     }
 
 }
