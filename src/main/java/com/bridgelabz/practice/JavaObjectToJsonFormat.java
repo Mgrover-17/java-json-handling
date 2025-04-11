@@ -1,0 +1,24 @@
+package com.bridgelabz.practice;
+
+import org.json.JSONObject;
+
+class Car{
+    String type;
+    String color;
+
+    Car(String type, String color){
+        this.type=type;
+        this.color=color;
+    }
+}
+public class JavaObjectToJsonFormat {
+    public static void main(String[] args) {
+        Car car=new Car("Venue","White");
+        JSONObject carJson=new JSONObject();
+        carJson.put("type",car.type);
+        carJson.put("color",car.color);
+
+        System.out.println(carJson.toString(4));
+    }
+
+}
